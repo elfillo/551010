@@ -1,0 +1,348 @@
+@mixin adaptive($res)
+  @media screen and (max-width: $res)
+    @content
+
+@mixin fullImg
+  img
+    width: calc(100% + 20px)
+    margin-left: -10px
+
+@mixin cutText($length)
+  overflow: hidden
+  text-overflow: ellipsis
+  display: -webkit-box
+  -webkit-line-clamp: $length
+  -webkit-box-orient: vertical
+
+$red: #B51529
+$blue: #2E1E83
+$mobile: 1100px
+
+.button
+  width: 175px
+  height: 36px
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: $red
+  color: white
+  cursor: pointer
+
+.design-interior
+  section
+    margin-bottom: 50px
+    +adaptive($mobile)
+      margin-bottom: 20px
+  section > .title
+    width: 100%
+    max-width: 655px
+    font-size: 28px
+    font-weight: 700
+    text-align: center
+    margin: auto
+    margin-bottom: 20px
+  section > .sub_title
+    width: 100%
+    max-width: 655px
+    font-size: 16px
+    text-align: center
+    margin: auto
+    margin-bottom: 30px
+  img
+    width: 100%
+    height: 100%
+    object-fit: contain
+  .hide
+    display: none
+  .first-slider
+    +adaptive($mobile)
+      margin-top: 20px
+    .item
+      width: 100%
+      display: flex
+      padding-bottom: 15px
+      +adaptive($mobile)
+        flex-direction: column
+      .box
+        width: 50%
+        +adaptive($mobile)
+          width: 100%
+        &_img
+          width: 100%
+          height: 401px
+          overflow: hidden
+          clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)
+          +adaptive($mobile)
+            height: auto
+            margin-bottom: 10px
+        &_text
+          width: 100%
+          display: flex
+          flex-direction: column
+          justify-content: center
+          .title
+            width: 80%
+            font-size: 20px
+            margin-bottom: 20px
+            +adaptive($mobile)
+              width: 100%
+              text-align: center
+          .btn
+            width: 100%
+            display: flex
+            justify-content: flex-start
+            +adaptive($mobile)
+              justify-content: center
+              margin-bottom: 20px
+  .design-interior--first-ar
+    top: 100%
+    background-image: url("../../img/left_arrow.png")
+    height: 10px
+    background-size: contain
+    &_next
+      transform: rotate(180deg)
+      left: 380px
+      +adaptive($mobile)
+        left: auto
+        right: 20%
+    &_prev
+      left: 320px
+      +adaptive($mobile)
+        left: 20%
+  .double-text
+    width: 100%
+    .content
+      width: 100%
+      display: flex
+      justify-content: space-around
+      align-items: center
+      flex-wrap: wrap
+      .box
+        width: 100%
+        max-width: 400px
+        +adaptive($mobile)
+          max-width: 100%
+        .img
+          width: 100%
+          max-width: 300px
+          height: 240px
+          +adaptive($mobile)
+            margin: auto
+      .separator
+        width: 1px
+        height: 100px
+        background-color: black
+        +adaptive($mobile)
+          width: 100%
+          height: 1px
+          margin: 20px 0
+  .banner-with-btn
+    width: 100%
+    max-width: 780px
+    margin-left: auto
+    margin-right: auto
+    padding: 40px 80px
+    background: rgb(65,68,162)
+    background: linear-gradient(188deg, rgba(65,68,162,1) 0%, rgba(48,34,134,1) 66%)
+    color: white
+    +adaptive($mobile)
+      padding: 20px
+    .icon
+      width: 77px
+      height: 77px
+      margin: auto
+      margin-bottom: 15px
+    .title
+      width: 100%
+      text-align: center
+      margin-bottom: 15px
+      font-size: 28px
+    .text
+      width: 100%
+      text-align: center
+      font-size: 16px
+      margin-bottom: 20px
+    .btn
+      margin: auto
+      .button
+        margin: auto
+  .benefits
+    width: 100%
+    .list
+      width: 100%
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      +adaptive($mobile)
+        justify-content: space-around
+      .item
+        width: 100%
+        max-width: 230px
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-bottom: 30px
+        .icon
+          width: 75px
+          height: 75px
+          margin-bottom: 15px
+        .text
+          width: 95%
+          font-size: 16px
+          text-align: center
+
+  .steps
+    width: 100%
+    .item
+      width: 100%
+      max-width: 307px
+      background-color: #E1E1E1
+      padding: 40px 25px 65px 25px
+      +adaptive($mobile)
+        padding: 20px
+      .icon
+        width: 127px
+        height: 127px
+        border-radius: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        background-color: $blue
+        margin: auto
+        margin-bottom: 20px
+        .img
+          width: 57px
+          height: 57px
+      .title
+        width: 90%
+        font-size: 25px
+        text-align: center
+        font-weight: 700
+        line-height: 30px
+        margin: auto
+        margin-bottom: 10px
+      .text
+        width: 100%
+        font-size: 16px
+        margin-bottom: 20px
+      .other
+        width: 100%
+        font-size: 18px
+        font-weight: 700
+        margin-bottom: 10px
+
+    .design-interior--steps
+      padding-left: 30px
+      +adaptive($mobile)
+        padding-left: 0
+      &-ar
+        background-image: url("../../img/left_arrow.png")
+        height: 10px
+        background-size: contain
+        &_next
+          transform: rotate(180deg)
+          right: 0
+        &_prev
+          left: 0
+
+  .partners
+    width: 100%
+    .list
+      width: 100%
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      align-items: center
+      +adaptive($mobile)
+        justify-content: space-around
+      .item
+        width: 100%
+        max-width: 190px
+        height: 59px
+        +adaptive($mobile)
+          margin-bottom: 20px
+  .gallery
+    width: 100%
+    margin-bottom: 0
+    .blocks-gallery-item
+      margin: 0
+  .sale_banner
+    width: 100%
+    max-width: 725px
+    height: 233px
+    margin-left: auto
+    margin-right: auto
+  .form
+    width: 100%
+    padding: 30px
+    background: rgb(65,68,162)
+    background: linear-gradient(188deg, rgba(65,68,162,1) 0%, rgba(48,34,134,1) 66%)
+    .select_block
+      width: 100%
+      display: flex
+      +adaptive($mobile)
+        flex-wrap: wrap
+      .column
+        width: 25%
+        border-right: 1px solid rgba(0,0,0,0.6)
+        +adaptive($mobile)
+          width: 100%
+          border-right: none
+        &-last
+          border-right: none
+        .title
+          width: 100%
+          font-size: 25px
+          color: white
+          margin-bottom: 50px
+          text-align: center
+          +adaptive($mobile)
+            margin-bottom: 20px
+        .list
+          width: 100%
+          display: flex
+          justify-content: center
+          +adaptive($mobile)
+            justify-content: flex-start
+          span.wpcf7-list-item
+            display: block
+            width: 100%
+            margin-bottom: 20px
+            color: white
+            input[type='radio']
+              margin-right: 20px
+    .form_block
+      .main_form
+        max-width: 700px
+        > p
+          margin-bottom: 10px
+        .captcha
+          display: flex
+          justify-content: center
+    .btn
+      margin-top: 50px
+      .button
+        margin: auto
+
+@media screen and (min-width: 1100px)
+  .header_nav--design
+    background-color: white !important
+    color: black
+    padding-bottom: 10px
+    .header_nav_list
+      li.active_design
+        border-bottom: 1px solid $blue
+        a
+          color: $red
+      li
+        &:last-child
+          background-color: inherit !important
+        &:hover
+          border-bottom: 1px solid $blue
+          a
+            color: $red
+        a
+          color: black
+
+
+
