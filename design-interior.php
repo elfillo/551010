@@ -69,12 +69,16 @@
                 <div class="swiper-wrapper">
 					<?php foreach ($steps_list as $item):?>
                       <div class="swiper-slide">
-                          <div class="item">
+                          <div class="item oneHeight">
                               <div class="icon"><div class="img"><img src="<?php echo $item['di_steps-list--img']?>" alt="#"></div></div>
                               <div class="title"><?php echo $item['di_steps-list--title']?></div>
                               <div class="text"><?php echo $item['di_steps-list--desc']?></div>
-                              <div class="other time">Время: <?php echo $item['di_steps-list--time']?></div>
-                              <div class="other price">Цена: <?php echo $item['di_steps-list--price']?></div>
+                              <div class="other time">
+                                  <?php echo $item['di_steps-list--time'] != '' ? 'Время: '.$item['di_steps-list--time'] : ''?>
+                              </div>
+                              <div class="other price">
+	                              <?php echo $item['di_steps-list--time'] != '' ? 'Цена: '.$item['di_steps-list--price'] : ''?>
+                              </div>
                           </div>
                       </div>
 					<?php endforeach; unset($steps_list, $item)?>
