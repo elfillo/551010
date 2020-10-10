@@ -1,0 +1,85 @@
+.modal_wrapper
+  width: 100%
+  height: 100vh
+  display: none
+  align-items: center
+  justify-content: center
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 1000
+  background-color: rgba(0, 0, 0, 0.5)
+.modal-flat-repair-level
+  .modal
+    width: 100%
+    max-width: 703px
+    height: auto
+    padding: 34px 40px 34px 50px
+    background: #FFFFFF
+    border: 1px solid #E1E1E3
+    box-sizing: border-box
+    border-radius: 10px
+    +adaptive($mobile)
+      padding: 15px 20px
+      max-width: 95%
+      height: 80%
+      overflow: scroll
+    .title
+      width: 100%
+      color: $blue
+      margin-bottom: 15px
+    .text
+      width: 100%
+      font-size: 14px
+      line-height: 26px
+      color: $off-black
+      margin-bottom: 15px
+    .list
+      width: 100%
+      margin-bottom: 25px
+      color: $off-black
+      &__title
+        width: 100%
+        font-weight: bold
+        font-size: 18px
+        line-height: 26px
+        text-align: center
+        margin-bottom: 15px
+      &__list
+        ul
+          column-count: 2
+          +adaptive($mobile)
+            column-count: 1
+          li
+            font-size: 14px
+            line-height: 16px
+            color: #000
+            margin-bottom: 18px
+            padding-left: 10px
+            position: relative
+            &::before
+              content: ''
+              display: block
+              width: 11px
+              height: 11px
+              background: #8B78FF
+              border-radius: 3px
+              position: absolute
+              left: -10px
+              top: 3px
+    .price
+      margin-bottom: 25px
+      font-weight: bold
+      font-size: 14px
+      line-height: 26px
+      color: #2B2D33
+      .item
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+    .close
+      width: 100%
+      display: flex
+      justify-content: center
+

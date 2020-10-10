@@ -1,0 +1,75 @@
+.service-card-link-wrapper
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+.service-card-link
+  width: 100%
+  height: 220px
+  display: flex
+  border-radius: 4px
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.75)
+  margin-bottom: 20px
+  +adaptive($mobile)
+    height: auto
+  &--mono
+    width: 49%
+    margin-right: 2%
+    +adaptive($mobile)
+      width: 100%
+      margin-right: 0
+    .icon
+      width: 50% !important
+    .text
+      width: 50% !important
+      .title
+        text-align: right !important
+    &:nth-child(2n)
+      margin-right: 0
+  .icon
+    width: 25%
+    height: 100%
+    background-size: cover !important
+    background-repeat: no-repeat !important
+    background-position: center !important
+    +adaptive($mobile)
+      background-size: contain !important
+      background-repeat: no-repeat !important
+      background-position: top !important
+  .text
+    width: 75%
+    height: 100%
+    padding: 20px
+    display: flex
+    flex-direction: column
+    .title
+      font-weight: bold
+      font-size: 24px
+      line-height: 28px
+      text-align: left
+      color: #2B2D33
+      margin-bottom: 10px
+      +adaptive($mobile)
+        text-align: right
+        font-size: 18px
+        line-height: 22px
+    .links
+      width: 100%
+      ul
+        column-count: 3
+        padding-left: 20px
+        +adaptive($mobile)
+          column-count: 1
+          padding-left: 0
+        li
+          margin-bottom: 5px
+          +adaptive($mobile)
+            text-align: right
+          a
+            font-size: 14px
+            line-height: 16px
+            color: $off-black
+            &:hover
+              color: #2400FF
+    .button
+      margin-top: auto
+      width: 100%

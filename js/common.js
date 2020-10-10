@@ -14,14 +14,17 @@ $(document).ready(function(){
 //open mobile menu
 $(document).ready(function(){
     var showMenu = false;
+    var menu = $('.mobile-menu ul');
+    var transitionTime = '0.5s';
+    var heightAnimateTime = 500;
     $('.burger').click(function(){
         showMenu = !showMenu;
         if(showMenu){
-            $('.header_nav__mobile_list').css({
-                'display':'block',
-                'height':'auto',
-                'transition':'0.2s'
+            $(menu).css({
+                'overflow':'visible',
+                'padding-bottom':'50px'
             });
+            autoHeightAnimate(menu, heightAnimateTime);
             $('.burger span:nth-child(2)').css({
                 'display':'none'
             });
@@ -29,33 +32,33 @@ $(document).ready(function(){
                 'transform':'rotate(45deg)',
                 'position':'absolute',
                 'top':'50%',
-                'transition':'0.2s'
+                'transition':transitionTime
             });
             $('.burger span:nth-child(3)').css({
                 'transform':'rotate(-45deg)',
                 'position':'absolute',
                 'top':'50%',
-                'transition':'0.2s'
+                'transition':transitionTime
             });
         }else{
-            $('.header_nav__mobile_list').css({
-                'display':'none',
-                'height':'0',
-                'transition':'0.2s'
-            }); 
+            $(menu).css({
+                'overflow':'hidden',
+                'padding-bottom':'0'
+            });
+            autoHeightAnimate(menu, heightAnimateTime);
             $('.burger span:nth-child(2)').css({
                 'display':'block'
             });
             $('.burger span:nth-child(1)').css({
                 'transform':'none',
                 'position':'static',
-                'transition':'0.2s'
+                'transition':transitionTime
             
             });
             $('.burger span:nth-child(3)').css({
                 'transform':'none',
                 'position':'static',
-                'transition':'0.2s'
+                'transition':transitionTime
             });
         }
     });
@@ -541,3 +544,128 @@ jQuery(document).ready(function($) {
 
 });
 /*либа для высоты блоков*/
+
+/*убирает кнопку отправить, если не стоит согласение*/
+
+$('.form__group input[type="checkbox"]').on('change', function () {
+   let form = $(this).closest('.form');
+   let btn = $(form).find('.button');
+   let checked = $(this).prop("checked");
+
+   if(checked === false){
+       $(btn).prop('disabled', true);
+       $(btn).addClass('button-disabled');
+   }else{
+       $(btn).prop('disabled', false);
+       $(btn).removeClass('button-disabled');
+   }
+
+});
+
+$('.accord-item__title').click(function () {
+    let arrow = $(this).find('.accord-item__arrow');
+    let content = $(this).closest('.accord-item').find('.accord-item__content');
+    $(this).closest('.accord-item').toggleClass('accord-item_active');
+    $(arrow).toggleClass('accord-item__arrow_up');
+    autoHeightAnimate(content, 500);
+});
+
+function autoHeightAnimate(element, time) {
+    var curHeight = element.height();
+    let needleHeight = curHeight > 0 ? 0 : 'auto';
+
+    var autoHeight = element.css('height', needleHeight).outerHeight();
+    element.height(curHeight);
+    element.stop().animate({ height: autoHeight }, parseInt(time));
+}
+
+var mapScript = $.getScript('https://api-maps.yandex.ru/2.1/?lang=ru_RU');
+$.when(mapScript)
+    .done(function () {
+
+        ymaps.ready(init)
+        function init() {
+
+            var newMarkerCollection = new ymaps.GeoObjectCollection();
+            var markerCollectio = [];
+            var center = [52.310714, 104.236796];
+
+            var myMap = new ymaps.Map("newMap", {
+                center: center,
+                zoom: 14,
+                controls: []
+            });
+
+            myMap.behaviors.disable('scrollZoom');
+
+            var placemark = setPlacemark(center);
+
+            markerCollectio.push(placemark);
+            newMarkerCollection.add(placemark);
+            myMap.geoObjects.add(newMarkerCollection);
+
+            setMapCenter(myMap, newMarkerCollection)
+        }
+
+        function setPlacemark(coords) {
+            var placemark = new ymaps.Placemark(coords, {}, {
+                iconLayout: 'default#image',
+                iconImageHref: '/wp-content/themes/551010/img/icons/mapIcon.png',
+                iconImageSize: [38, 38],
+            });
+
+            return placemark;
+        }
+
+        function setMapCenter(map, collection) {
+            var centerAndZoom = ymaps.util.bounds.getCenterAndZoom(
+                collection.getBounds(),
+                map.container.getSize(),
+                map.options.get('projection')
+            );
+
+            map.setCenter(centerAndZoom.center, 16);
+        }
+    })
+
+
+/*модалка для формы обратной связи*/
+$('.call-back-modal').click(function () {
+   $('.modal-call-back').css({'display':'flex'});
+});
+
+$(document).click(function (event) {
+    if ($(event.target).is('.modal_wrapper')) {
+        $('.modal_wrapper').css({'display':'none'});
+    }
+});
+
+$(document).ready(function () {
+   let ol = $('ol.list-numeric');
+   let ul = $('ul.list-dotted');
+   ol.map((k, item) => {
+       let oneHeight = 0;
+       let li = $(item).find('li');
+       li.map((k, i) => {
+           let itemHeight = $(i).height();
+           if(itemHeight > oneHeight) oneHeight = itemHeight;
+       });
+
+       li.map((k, i) => {
+           $(i).css({'height' : oneHeight});
+       });
+   });
+
+    ul.map((k, item) => {
+        let oneHeight = 0;
+        let li = $(item).find('li');
+        li.map((k, i) => {
+            let itemHeight = $(i).height();
+            if(itemHeight > oneHeight) oneHeight = itemHeight;
+        });
+
+        li.map((k, i) => {
+            $(i).css({'height' : oneHeight});
+        });
+    });
+});

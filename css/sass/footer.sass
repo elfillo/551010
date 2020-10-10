@@ -1,0 +1,67 @@
+$gold: #FEE600
+
+.footer
+  width: 100%
+  background-color: $blue
+  padding: 13px 0
+  min-height: 500px
+  .header-row
+    width: 100%
+    display: flex
+    align-items: center
+    padding-bottom: 11px
+    border-bottom: 1px solid #ffffff
+    margin-bottom: 12px
+    +adaptive($mobile)
+      align-items: flex-start
+    .title
+      color: #ffffff
+      width: 100%
+      margin-bottom: 0
+      +adaptive($mobile)
+        text-align: right
+    .logo
+      width: 172px
+      height: 37px
+  .body-row
+    width: 100%
+    display: flex
+    +adaptive($mobile)
+      flex-direction: column-reverse
+    .info
+      width: 25%
+      font-weight: 300
+      font-size: 14px
+      line-height: 26px
+      color: #ffffff
+      margin-right: 50px
+      +adaptive($mobile)
+        width: 100%
+        display: block !important
+    .footer-menu
+      column-count: 3
+      margin-bottom: 50px
+      +adaptive($mobile)
+        column-count: 2
+      +adaptive('375px')
+        column-count: 1
+      li a
+        color: #ffffff
+      li
+        font-weight: normal
+        font-size: 16px
+        line-height: 32px
+        .sub-menu
+          li a
+            color: $gold
+          >li > .sub-menu
+            margin-left: 15px
+            li a
+              color: #ffffff
+  .copyright-row
+    font-weight: 300
+    font-size: 14px
+    line-height: 26px
+    text-align: center
+    color: #ffffff
+    margin-top: 20px

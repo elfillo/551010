@@ -1,6 +1,6 @@
 <?php
 	/*
-	Template Name: Дизайн интерьера
+	Template Name: Малоэтажное строительство
 	*/
 ?>
 <?php
@@ -16,6 +16,11 @@
 	$sale_banner = carbon_get_post_meta($post->ID, 'di_sale_banner');
 ?>
 <?php get_header('design')?>
+    <section class="section">
+        <div class="container container_regular">
+            <div class="breadcrumb"><?php echo breadcrumbs()?></div>
+        </div>
+    </section>
 	<div class="container design-interior">
 		<section class="first-slider">
             <!-- Swiper -->

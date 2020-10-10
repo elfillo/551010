@@ -1,0 +1,79 @@
+.repair-report
+  &-wrapper
+    width: 100%
+    max-width: 930px
+    margin: auto
+  &-header
+    width: 100%
+    display: flex
+    margin-bottom: 130px
+    //flex-wrap: wrap
+    +adaptive($mobile)
+      flex-direction: column
+      margin-bottom: 25px
+    .cover
+      width: 100%
+      max-width: 300px
+      height: 300px
+      margin-right: 50px
+      img
+        width: 100%
+        height: 100%
+        height: -webkit-fill-available
+        object-fit: cover
+        border-radius: 10px
+    .text
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      .title
+        width: 100%
+        margin-bottom: 0
+        text-align: left
+        font-weight: bold
+        font-size: 24px
+        line-height: 54px
+        +adaptive($mobile)
+          font-size: 20px
+          line-height: 1
+          margin-top: 15px
+      .report
+        width: 100%
+        font-weight: 300
+        font-size: 14px
+      .price
+        width: 100%
+        font-weight: bold
+        font-size: 24px
+        line-height: 26px
+        +adaptive($mobile)
+          font-size: 20px
+          line-height: 1
+          margin-top: 15px
+      .pdf
+        display: flex
+        align-items: center
+        +adaptive($mobile)
+          margin-top: 15px
+        .button
+          margin-right: 30px
+  &-body
+    width: 100%
+    .repair-gallery
+      width: 100%
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      +adaptive($mobile)
+        justify-content: space-around
+      .item
+        width: 301px
+        height: 301px
+        overflow: hidden
+        margin-bottom: 20px
+        img
+          width: 100%
+          height: 100%
+          height: -webkit-fill-available
+          object-fit: cover
+          border-radius: 10px
