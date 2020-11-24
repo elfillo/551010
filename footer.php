@@ -1,7 +1,7 @@
     <footer class="footer">
         <div class="container container_regular">
             <div class="header-row">
-                <div class="logo"><img src="<?php get_uri('img/icons/logo_footer.png')?>" alt="Логотип"></div>
+                <div class="logo"><img src="<?php get_uri('img/icons/logo_footer.svg')?>" alt="Логотип"></div>
                 <div class="title">Ремонт квартир в Иркутске</div>
             </div>
             <div class="body-row">
@@ -18,6 +18,5 @@
         </div>
     </footer>
     <?php wp_footer(); ?>
-    <?php //include_once 'parts/footer-script.php'?>
 </body>
 </html>

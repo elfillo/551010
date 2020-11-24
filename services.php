@@ -56,7 +56,7 @@
 			<div class="service-card-link service-card-link--mono">
 				<div class="icon" style='background: url("<?php get_uri("img/icons/service/el.png")?>")'></div>
 				<div class="text">
-					<div class="title" style="word-break: break-word">Электромонтажные работы</div>
+					<div class="title elektromontazhnye-raboty" style="word-break: break-word">Электромонтажные работы</div>
 					<a href="/elektromontazhnye-raboty/" class="button button_yellow">Перейти</a>
 				</div>
 			</div>

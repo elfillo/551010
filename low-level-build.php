@@ -21,6 +21,9 @@
             <div class="breadcrumb"><?php echo breadcrumbs()?></div>
         </div>
     </section>
+    <section class="section">
+        <div class="container container_regular">
+
 	<div class="container design-interior">
 		<section class="first-slider">
             <!-- Swiper -->
@@ -124,6 +127,8 @@
             <div class="btn"><div class="button show_form">Далее</div></div>
         </section>
 	</div>
+        </div>
+    </section>
     <div class="design-interior">
         <section class="gallery">
             <div class="title">Фотогалерея наших работ:</div>

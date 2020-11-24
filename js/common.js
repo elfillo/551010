@@ -25,41 +25,20 @@ $(document).ready(function(){
                 'padding-bottom':'50px'
             });
             autoHeightAnimate(menu, heightAnimateTime);
-            $('.burger span:nth-child(2)').css({
-                'display':'none'
-            });
-            $('.burger span:nth-child(1)').css({
-                'transform':'rotate(45deg)',
-                'position':'absolute',
-                'top':'50%',
+            $(this).css({
+                'transform' : 'rotate(225deg)',
                 'transition':transitionTime
-            });
-            $('.burger span:nth-child(3)').css({
-                'transform':'rotate(-45deg)',
-                'position':'absolute',
-                'top':'50%',
-                'transition':transitionTime
-            });
+            })
         }else{
             $(menu).css({
                 'overflow':'hidden',
                 'padding-bottom':'0'
             });
             autoHeightAnimate(menu, heightAnimateTime);
-            $('.burger span:nth-child(2)').css({
-                'display':'block'
-            });
-            $('.burger span:nth-child(1)').css({
-                'transform':'none',
-                'position':'static',
+            $(this).css({
+                'transform' : 'rotate(45deg)',
                 'transition':transitionTime
-            
-            });
-            $('.burger span:nth-child(3)').css({
-                'transform':'none',
-                'position':'static',
-                'transition':transitionTime
-            });
+            })
         }
     });
 });
