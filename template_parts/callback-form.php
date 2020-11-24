@@ -1,1 +1,1 @@
-<?php echo do_shortcode('[contact-form-7 id="759" title="Форма обратной звонка"]')?>
+<?php echo do_shortcode('[contact-form-7 id="759" title="Форма обратной звонка"]')?>У вас возникли вопросы?

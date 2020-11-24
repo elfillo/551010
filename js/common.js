@@ -631,6 +631,16 @@ $.when(mapScript)
 
 /*модалка для формы обратной связи*/
 $('.call-back-modal').click(function () {
+    let title = $(this).attr('data-title');
+    let title_block = $('#call-back-form').find('.form__title.title');
+
+
+    if(title !== undefined){
+        $(title_block).text(title);
+    }else{
+        $(title_block).text('Заполните форму обратной связи, чтобы оформить обратный звонок!');
+    }
+
    $('.modal-call-back').css({'display':'flex'});
 });
 

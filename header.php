@@ -15,7 +15,7 @@
             <a href="/" class="logo"></a>
             <div class="call-back-wrapper">
                 <a href="tel:+73952551010" class="phone">+7(3952) 55-10-10</a>
-                <div class="button call-back-modal">Заказать смету проекта</div>
+                <div class="button call-back-modal" data-title="Для заказа сметы - заполните поля">Заказать смету проекта</div>
             </div>
         </div>
     </div>

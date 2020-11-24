@@ -11,5 +11,3 @@ Template Name: Главная
 <?php get_header(); ?>
 <?php $draw->page();?>
 <?php get_footer(); ?>
-
-

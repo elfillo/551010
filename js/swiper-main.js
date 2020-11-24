@@ -95,7 +95,7 @@ var partners = new Swiper('.partners__list', {
         clickable: true,
     },
     autoplay: {
-        delay: 3000,
+        delay: 1500,
     },
     navigation: {
         nextEl: '.partners__arrow_next',
