@@ -1,7 +1,7 @@
 <?php
 	$repairLevel = [
 		[
-			'img' => 'img/new/flat_repair_1.png',
+			'img' => 'img/new/flat-repair-levels/flat_repair_1.png',
 			'title' => 'Ремонт класса "Эконом"',
 			'id'    => 'repairLowLevel',
 			'sub-title' =>'
@@ -12,7 +12,7 @@
 			'price' => ['1 900', '1 500']
 		],
 		[
-			'img' => 'img/new/flat_repair_2.png',
+			'img' => 'img/new/flat-repair-levels/flat_repair_2.png',
 			'title' => 'Ремонт класса "Комфорт"',
 			'id'    => 'repairComfortLevel',
 			'sub-title' =>'
@@ -23,7 +23,7 @@
 			'price' => ['3 500', '2 900']
 		],
 		[
-			'img' => 'img/new/flat_repair_3.png',
+			'img' => 'img/new/flat-repair-levels/flat_repair_3.png',
 			'title' => 'Ремонт класса "Люкс"',
 			'id'    => 'repairLuxLevel',
 			'sub-title' =>'
@@ -35,7 +35,7 @@
 			'price' => ['6 900', '5 800']
 		],
 		[
-			'img' => 'img/new/flat_repair_4.png',
+			'img' => 'img/new/flat-repair-levels/flat_repair_4.png',
 			'title' => 'Элитный ремонт',
 			'id'    => 'repairEliteLevel',
 			'sub-title' =>'
